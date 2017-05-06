@@ -54,9 +54,10 @@ def add_to_shopping_list(lists_by_name, list_name, items):
     Returns:
       None
     """
-
-    # your code here! 
-    pass
+    if list_name not in lists_by_name:
+        print list_name +  " not found"
+    else:
+        lists_by_name[list_name] = items
 
 
 def remove_from_shopping_list(lists_by_name, list_name, items):
@@ -94,6 +95,8 @@ def display_shopping_list(lists_by_name, list_name):
         print list_name + " not found"
     else:
         print list_name
+        for item in lists_by_name[list_name]:
+            print item
 
 
 def show_all_lists(lists_by_name):
